@@ -1,0 +1,34 @@
+﻿@{
+    ViewData["Title"] = "Todo list";
+}
+
+<h2>Todo list</h2>
+<p>Type something to do</p>
+
+
+
+
+<form id="todoForm" onsubmit='event.preventDefault(); formValidationDouble("todoForm")'  action="/Main/Todo" method="POST" onsubmit="myFunction()">
+    <input type="text" name="itemValue" />
+    <input type="submit" value="sumbit" />
+</form>
+<div class="message"></div>
+<span>
+    
+    <ul>
+
+        @if (@ViewBag.item != null)
+        {
+            //Loop det data from the ViewBag variable
+            @foreach (string item in @ViewBag.item)
+            {
+                <li>
+                    @item 
+                </li>
+            }
+        }
+
+
+    </ul>
+</span>
+<partial name="Partial/_Links.cshtml">

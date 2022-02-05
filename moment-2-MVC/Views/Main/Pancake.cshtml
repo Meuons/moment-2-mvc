@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = "Recepie";
+}
+@model moment_2_MVC.Models.Pancake
+
+
+<h2>Pancakes</h2>
+<p>How many portions?</p>
+
+
+
+
+<form name="amountForm" action="/Main/Pancake" method="POST">
+    <select name="amountValue" onchange="this.form.submit()">
+        <option value="">Select amount of portions</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+    </select>
+</form>
+
+<div>
+  @if   (@Model != null)
+    {
+
+      //If the model in not empty write out the data from the object
+            <span>You need: </span>
+
+            <span> @Model.flour dl flour, </span>
+            <span> @Model.salt tsp salt, </span>
+            <span> @Model.milk dl milk </span>
+            <span> and @Model.eggs eggs</span>
+           
+            <span> in order to make @Model.portions portions of pancakes</span>
+       
+    }
+          
+
+
+</div>

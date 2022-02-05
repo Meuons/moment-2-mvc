@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Converter";
+
+}
+
+<h2>Converter</h2>
+<p>Convert from celcius to farenheit</p>
+
+
+
+
+<form action="/Main/Converter" method="POST">
+    <label for="Farenheit to celcius">Farenheit to celcius</label>
+    <input type="checkbox" value="true"  name="fToC"><br>
+    <input type="text" name="degreeValue" />
+
+    <input type="submit" value="Convert" />
+</form>
+
+<span id="resultDisplay">
+    @ViewData["temperature"]
+</span>
